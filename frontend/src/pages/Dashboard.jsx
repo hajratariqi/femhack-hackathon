@@ -46,7 +46,7 @@ const Dashboard = () => {
   
     try {
       const response = await axios.put(
-        `http://localhost:8000/api/task/update/${editingTask._id}`,
+        `https://server-production-e77e.up.railway.app/api/task/update/${editingTask._id}`,
         {
           title: editTitle,
           description: editDescription,
@@ -70,7 +70,7 @@ const Dashboard = () => {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/api/task/all');
+        const response = await axios.get('https://server-production-e77e.up.railway.app/api/task/all');
       const allTasks = response.data.tasks;
   
       const pending = allTasks.filter(task => task.status === 'pending');
@@ -99,7 +99,7 @@ const Dashboard = () => {
   const handleTaskSave = async () => {
     if (taskTitle.trim() !== '' && taskDescription.trim() !== '' && taskAssignedTo.trim() !== '') {
       try {
-        const response = await axios.post('http://localhost:8000/api/task/add', {
+        const response = await axios.post('https://server-production-e77e.up.railway.app/api/task/add', {
           title: taskTitle,
           description: taskDescription,
           assignedTo: taskAssignedTo,
@@ -129,7 +129,7 @@ const Dashboard = () => {
   const handleDeleteTask = async (taskId) => {
     console.log("🚀 ~ handleDeleteTask ~ taskId:", taskId)
     try {
-      const response = await axios.delete(`http://localhost:8000/api/task/delete/${taskId}`); 
+      const response = await axios.delete(`https://server-production-e77e.up.railway.app/api/task/delete/${taskId}`); 
       if (response.status === 200) {
         toast.success('Task deleted successfully!');
         fetchTasks(); 
@@ -185,7 +185,7 @@ const Dashboard = () => {
       console.log("🚀 ~ handleDragEnd ~ updatedStatus:", updatedStatus)
 
 
-      const response = await axios.put(`http://localhost:8000/api/task/update/${movedTask._id}`, {
+      const response = await axios.put(`https://server-production-e77e.up.railway.app/api/task/update/${movedTask._id}`, {
         status: updatedStatus, 
       });
       fetchTasks()
