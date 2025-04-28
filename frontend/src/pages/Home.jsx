@@ -15,7 +15,7 @@ const Home = () => {
         
         <div className="relative z-10">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">
-            Welcome to <span className="text-amber-300">Your</span> Space
+            Welcome to <span className="text-amber-300">Your</span> Task Tracker Management System
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-gray-200">
             Discover a world of possibilities where innovation meets creativity. 
