@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Header = ({user}) => {
   const logout = () => {
     localStorage.clear();
-    window.location.href = '/login';
+    window.location.href = '/';
   };
   return (
     <header className="px-8 py-4 shadow-md">
