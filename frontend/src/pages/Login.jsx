@@ -13,7 +13,8 @@ function Login() {
     e.preventDefault();
     console.log('Login data:', formData);
     try{
-    const response = await axios.post('https://https://server-production-e77e.up.railway.app/api/auth/login', formData)
+    // const response = await axios.post('https://server-production-e77e.up.railway.app/auth/login', formData)
+    const response = await axios.post('https://server-production-e77e.up.railway.app/api/auth/login', formData)
 
     if(response.status === 200){
         console.log('Signup Success:', response.data);
